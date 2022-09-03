@@ -1,4 +1,5 @@
 import csv
+from pickletools import int4
 
 
 total_profit_losses = 0
@@ -16,7 +17,23 @@ with open("Resources/budget_data.csv", 'r') as file:
     for row in csvreader:
         count += 1
 
-print("Total Months: ", count)
+    print("Total Months: ", count)
+    
+    
+
+with open("Resources/budget_data.csv", 'r') as file:
+    csvreader = csv.DictReader(file)
+
+    profit_loss = sum(int(r['Profit/Losses']) for r in csvreader)
+
+    print(f'Total: ${profit_loss }')
+
+    # sum = 0
+        
+    # for row in csvreader:
+    #     sum += csvreader
+    # print(sum)
+
  
     #row_count = sum(1  for row in csvreader)
 
