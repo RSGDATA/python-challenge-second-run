@@ -1,6 +1,7 @@
 import csv
 from pickletools import int4
 
+import numpy as geek
 
 total_profit_losses = 0
 current = 0
@@ -26,29 +27,74 @@ with open("Resources/budget_data.csv", 'r') as file:
 
     profit_loss = sum(int(r['Profit/Losses']) for r in csvreader)
 
-    print(f'Total: ${profit_loss }')
+with open("Resources/budget_data.csv", 'r') as file:
+    csvreader = csv.reader(file)
+    next(csvreader)
+    
+    data = []
+    
+    for row in csvreader:
+        data.append(row)
 
-    # sum = 0
+        total_profit_losses = profit_loss + int(row[1])
+
+        months = months + 1
+
+        current = int(row[1])
+
+        if months > 1:
+            change = current - last
+
+    total_change = total_change + change
+
+    last = int(row[1])
+
+
+    average_change = total_change / (months - 1) 
+
+    
+    # total1=0
+    
+    # for i in csvreader:
+    #     total1 += 1
+    #     print(int(i[1]))
+
+    # print(f'Total: ${profit_loss }')
+
+    # difference = count-profit_loss
+
+    # average_loss = difference/profit_loss-count *100
+
+
+
+    # print(average_loss)
+
+print(average_change)
+
+
+
+
+#     sum = 0
         
-    # for row in csvreader:
-    #     sum += csvreader
-    # print(sum)
+#     for row in csvreader:
+#         sum += csvreader
+#     print(sum)
 
  
-    #row_count = sum(1  for row in csvreader)
+#     row_count = sum(1  for row in csvreader)
 
-    #print(row_count)
-    # next(csvreader)
-    # for row in csvreader:
-        # handle parsed row
+#     print(row_count)
+#     next(csvreader)
+#     for row in csvreader:
+#         handle parsed row
 
 # loop through all of the rows in the csv
-    # for row in csvreader:
-    #     Date = (row["Date"])
+#     for row in csvreader:
+#         Date = (row["Date"])
 
-    #     print(len(Date))
+#         print(len(Date))
         
-        # total_profit_losses = total_profit_losses + int(row[1])
+#         total_profit_losses = total_profit_losses + int(row[1])
 
         
 
