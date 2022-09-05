@@ -31,26 +31,32 @@ with open("Resources/budget_data.csv", 'r') as file:
     csvreader = csv.reader(file)
     next(csvreader)
     
-    data = []
+   
     
     for row in csvreader:
-        data.append(row)
+        
 
-        total_profit_losses = profit_loss + int(row[1])
+        total_profit_losses = total_profit_losses + int(row[1])
 
         months = months + 1
-
+        
+        
         current = int(row[1])
+        
 
         if months > 1:
             change = current - last
 
-    total_change = total_change + change
+            total_change = total_change + change
 
-    last = int(row[1])
+            last = int(row[1])
 
 
-    average_change = total_change / (months - 1) 
+            average_change = total_change / (months - 1) 
+
+            
+
+            
 
     
     # total1=0
@@ -69,7 +75,7 @@ with open("Resources/budget_data.csv", 'r') as file:
 
     # print(average_loss)
 
-print(average_change)
+
 
 
 
