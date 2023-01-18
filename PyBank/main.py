@@ -19,7 +19,7 @@ with open("Resources/budget_data.csv", 'r') as file:
         count += 1
 
     print("Total Months: ", count)
-    
+    "hello"
     
 
 with open("Resources/budget_data.csv", 'r') as file:
